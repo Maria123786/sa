@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <table>
+            <tr>
+                <td>User Name</td>
+                <td><input type="text" id="username" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            // Get user input
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check password
+            if(password === "123"){
+                document.getElementById("message").innerHTML = "<h3>Welcome, " + username + "!</h3>";
+            } else {
+                document.getElementById("message").innerHTML = "<h3>Invalid Password</h3>";
+            }
+        });
+    </script>
+</body>
+</html>
